@@ -64,11 +64,13 @@ isAdmin: true
 
 ## 🖼️ Screenshots
 
-| Home Page         | Product Detail    | Cart Page         |
-|------------------|------------------|------------------|
-| ![Home](./assets/home.png) | ![Detail](./assets/detail.png) | ![Cart](./assets/cart.png) |
+| Home Page | Product Detail Page | Cart Page |
+|-----------|---------------------|-----------|
+| ![Home](https://github.com/Gautam2117/ecommerce-store/blob/master/Home_ECom.png?raw=true) | ![Detail](https://github.com/Gautam2117/ecommerce-store/blob/master/Detail_ECom.png?raw=true) | ![Cart](https://github.com/Gautam2117/ecommerce-store/blob/master/Cart_ECom.png?raw=true) |
 
-> Add actual screenshots in a local `assets/` folder and update paths.
+| My Orders Page | Admin Dashboard |
+|----------------|------------------|
+| ![My Orders](https://github.com/Gautam2117/ecommerce-store/blob/master/MyOrders_ECom.png?raw=true) | ![Admin](https://github.com/Gautam2117/ecommerce-store/blob/master/Admin_ECom.png?raw=true) |
 
 ---
 
