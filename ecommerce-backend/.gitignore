@@ -1,0 +1,12 @@
+# Node
+node_modules/
+
+# Logs
+logs
+*.log
+
+# dotenv
+.env
+
+# Build
+frontend/build
