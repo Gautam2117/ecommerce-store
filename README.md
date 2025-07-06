@@ -82,4 +82,12 @@ isAdmin: true
 
 ---
 
+---
+
+## 📅 Upcoming Improvements
+
+- 💳 **Razorpay Integration for Checkout** will be implemented in **Week 8** to support real-time payments with secure transaction flow.
+
+---
+
 > Made with ❤️ by [Gautam Govind](https://github.com/Gautam2117)
