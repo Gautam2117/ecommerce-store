@@ -25,15 +25,55 @@ const Cart = () => {
         image: item.image,
       }));
 
-      await axios.post("/api/orders", {
-        items: orderItems,
-        total,
+      // 1. Create Razorpay Order from backend
+      const { data: razorpayOrder } = await axios.post("/api/payment/create-order", {
+        amount: total,
       });
 
-      dispatch({ type: "CLEAR_CART" });
-      navigate("/success");
+      // 2. Configure Razorpay options
+      const options = {
+        key: "your_razorpay_key_id", // Replace with env var in prod
+        amount: razorpayOrder.amount,
+        currency: "INR",
+        name: "E-Commerce Store",
+        description: "Order Payment",
+        order_id: razorpayOrder.id,
+        handler: async (response) => {
+          try {
+            // 3. Verify payment
+            const verifyRes = await axios.post("/api/payment/verify", response);
+
+            if (verifyRes.data.success) {
+              // 4. Place order in DB only after payment success
+              await axios.post("/api/orders", {
+                items: orderItems,
+                total,
+                paymentInfo: {
+                  id: response.razorpay_payment_id,
+                  order_id: response.razorpay_order_id,
+                },
+              });
+
+              dispatch({ type: "CLEAR_CART" });
+              navigate("/success");
+            } else {
+              alert("❌ Payment verification failed.");
+            }
+          } catch (verifyErr) {
+            console.error("Verification failed:", verifyErr);
+            alert("❌ Payment verification error.");
+          }
+        },
+        theme: {
+          color: "#000000",
+        },
+      };
+
+      // 5. Open Razorpay modal
+      const rzp = new window.Razorpay(options);
+      rzp.open();
     } catch (err) {
-      console.error("Order failed:", err);
+      console.error("Checkout failed:", err);
       alert("❌ Checkout failed. Please try again.");
     }
   };
