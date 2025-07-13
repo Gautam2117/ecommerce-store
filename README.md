@@ -14,7 +14,7 @@ A modern, full-featured e-commerce application built with the MERN stack (MongoD
 - 📦 **Order Placement** with success screen  
 - 👤 **User Dashboard** to view orders  
 - 🛠️ **Admin Dashboard** to create/edit products and manage orders  
-
+- 💳 **Secure Checkout with Razorpay Integration**
 ---
 
 ## 📁 Folder Structure
@@ -82,11 +82,13 @@ isAdmin: true
 
 ---
 
----
+## 📅 Week 8 Final Enhancements
 
-## 📅 Upcoming Improvements
-
-- 💳 **Razorpay Integration for Checkout** will be implemented in **Week 8** to support real-time payments with secure transaction flow.
+- ✅ **Razorpay Checkout Integration**:  
+  Secure payment flow is now enabled. Users can complete transactions via Razorpay after adding items to cart.
+  
+- 🛠️ **Production Readiness**:  
+  Code structured and deployed for optimized performance and seamless user experience.
 
 ---
 
